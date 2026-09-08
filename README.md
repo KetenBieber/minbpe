@@ -134,6 +134,58 @@ to run the tests. (-v is verbose, slightly prettier).
 
 For those trying to study BPE, here is the advised progression exercise for how you can build your own minbpe step by step. See [exercise.md](exercise.md).
 
+## coursework submission
+
+The `assignments/` directory contains my coursework implementations for the minbpe exercises:
+
+```text
+assignments/
+├── hw_1.py
+├── hw_2.py
+└── hw_3.py
+```
+
+### Environment setup
+
+This repository uses Python 3.13 or later and `uv` for dependency management. From the repository root, install the project and development dependencies with:
+
+```bash
+uv sync
+```
+
+The assignment implementations depend on `regex` and `tiktoken`, which are declared in `pyproject.toml`.
+
+### Running the assignments
+
+Run each submission from the repository root so that imports and paths are resolved consistently:
+
+```bash
+uv run python assignments/hw_1.py
+uv run python assignments/hw_2.py
+uv run python assignments/hw_3.py
+```
+
+The scripts include executable examples and assertions that serve as lightweight checks for the implemented behavior. The repository test suite can be run with:
+
+```bash
+uv run pytest -v .
+```
+
+### Submission workflow
+
+Each assignment should be submitted as a small, focused Git commit. Before submitting, verify that:
+
+1. The relevant script runs successfully from the repository root.
+2. Assertions and tests pass without modifying the expected project behavior.
+3. Generated files, caches, credentials, and local environment files are excluded.
+4. The commit message briefly describes the completed work, for example:
+
+	```text
+	Complete BPE tokenizer assignments
+	```
+
+The final repository should contain the source files, supporting documentation, and reproducible setup information needed for a reviewer or course instructor to run the work independently.
+
 ## lecture
 
 I built the code in this repository in this [YouTube video](https://www.youtube.com/watch?v=zduSFxRajkE). You can also find this lecture in text form in [lecture.md](lecture.md).
